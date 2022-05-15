@@ -1,0 +1,67 @@
+﻿<Page x:Class="Diplom_41P_SergeevDI.Views.Authorization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom_41P_SergeevDI.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Authorization">
+
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border Background="{TemplateBinding Background}" CornerRadius="3" RenderTransformOrigin="0 0">
+                                <Border.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform></ScaleTransform>
+                                        <SkewTransform AngleX="-20"/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Border.RenderTransform>
+                            </Border>
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    
+    
+    <Grid Background="White" >
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <StackPanel  Margin="10 -30 10 0" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Width="370" Margin="0 0 0 40" Source="..\Resourses\Logo.jpg" Stretch="UniformToFill" Height="116"/>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock TextAlignment="Center" Margin="0 -50 0 0" FontSize="12" TextWrapping="Wrap"><Run Text="Войдите в аккаунт чтобы получить доступ"/></TextBlock>
+
+                <GroupBox BorderBrush="White" Header="введите логин">
+                    <TextBox x:Name="txtLogin"/>
+                </GroupBox>
+                <GroupBox BorderBrush="White" Header="введите пароль">
+                    <PasswordBox x:Name="txtPassword"/>
+                </GroupBox>
+                <Button Background="#91ffe5" FontSize="16" BorderBrush="Transparent" Height="30" Width="250" Content="Войти" Click="btnLogin_Click"/>
+                <Button Background="#91ffe5" Margin="0 10 0 0" FontSize="16" BorderBrush="Transparent" Height="30" Width="200" Content="Регистрация" Click="Button_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Image Grid.Column="1" Stretch="UniformToFill" Source="..\Resourses\image.jpg"/>
+
+    </Grid>
+</Page>

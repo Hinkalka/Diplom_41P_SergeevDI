@@ -1,0 +1,93 @@
+﻿<Page x:Class="Diplom_41P_SergeevDI.Views.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom_41P_SergeevDI.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="Height" Value="30"></Setter>
+            <Setter Property="FontFamily" Value="Roboto"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border Background="{TemplateBinding Background}" CornerRadius="3" RenderTransformOrigin="0 0">
+                                <Border.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform AngleX="-20"/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Border.RenderTransform>
+                            </Border>
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="199*"/>
+                <ColumnDefinition Width="201*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" MinHeight="58"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Disabled" Grid.ColumnSpan="2" Margin="0,0,0,17">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal"
+                            Margin="20,10,64,10"
+                            Grid.Column="0">
+                        <TextBlock Foreground="#0CC4B2" FontSize="24"><Run Text="Меню пользователя"/></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                            Margin="10"
+                            Grid.Column="1">
+                        <Button Content="Чат  " Width="70" BorderBrush="Transparent" Background="#91ffe5" Click="Button_Click_2" Margin="0,7,20,7"/>
+                        <Button Content="Телефонный справочник   " Width="218" BorderBrush="Transparent" Background="#91ffe5" Click="Button_Click_1" Margin="0,7,20,7"/>
+                        <Button Content="Выйти   " Margin="0 0 10 0" Width="100" BorderBrush="Transparent" Click="Button_Click" Background="#91ffe5" />
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+        <Grid Width="800" Margin="0,66,0,0">
+            <Frame Name="Fmainp" NavigationUIVisibility="Hidden"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <Image Width="200" Height="250" Stretch="UniformToFill" Source="..\Resourses\image 2.jpg" x:Name="PI" Margin="25,79,575,121"></Image>
+        <StackPanel Width="400" Height="380" Margin="100 70 0 0"  Orientation="Vertical">
+            <GroupBox  BorderBrush="White" >
+                <TextBlock x:Name="tbTime" TextAlignment="Right"/>
+            </GroupBox>
+            <GroupBox  BorderBrush="White" Header="Доброго времени суток,">
+                <TextBlock x:Name="tbV"/>
+            </GroupBox>
+            <GroupBox BorderBrush="White" Header="Ваш план на сегодня:">
+                <TextBox  BorderBrush="#91ffe5" x:Name="tbDR" Height="82"/>
+            </GroupBox>
+        </StackPanel>
+        <Image Source="..\Resourses\70559.png" Stretch="UniformToFill" Margin="655,79,10,252"/>
+    </Grid>
+</Page>

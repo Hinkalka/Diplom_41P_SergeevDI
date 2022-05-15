@@ -1,0 +1,81 @@
+﻿<Page x:Class="Diplom_41P_SergeevDI.Views.AddUserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom_41P_SergeevDI.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddUserPage">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="Height" Value="30"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border Background="{TemplateBinding Background}" CornerRadius="3" RenderTransformOrigin="0 0">
+                                <Border.RenderTransform>
+                                    <TransformGroup>
+
+                                        <ScaleTransform></ScaleTransform>
+                                        <SkewTransform AngleX="-20"/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Border.RenderTransform>
+                            </Border>
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="White">
+
+        <ScrollViewer>
+
+            <GroupBox BorderBrush="White" Width="282" Margin="400 0 0 0" Height="453">
+
+                <StackPanel>
+                    <TextBox Text="          Регистрация" Foreground="#59D4AB" BorderBrush="White" FontSize="24"/>
+                    <GroupBox  BorderBrush="White"  Header="Имя">
+                        <TextBox x:Name="txtName"/>
+                    </GroupBox>
+                    <GroupBox  BorderBrush="White"  Header="Отчество">
+                        <TextBox x:Name="txtPatronumic"/>
+                    </GroupBox>
+                    <GroupBox  BorderBrush="White"  Header="Фамилия">
+                        <TextBox x:Name="txtSurname"/>
+                    </GroupBox>
+                    <GroupBox  BorderBrush="White"  Header="Должность">
+                        <TextBox x:Name="txtPosition" />
+                    </GroupBox>
+                    <GroupBox  BorderBrush="White"  Header="Телефон">
+                        <TextBox x:Name="txtPhone" />
+                    </GroupBox>
+                    <GroupBox  BorderBrush="White"  Header="Фото">
+                        <TextBox x:Name="txtImage" />
+                    </GroupBox>
+                    <GroupBox  BorderBrush="White"  Header="Логин">
+                        <TextBox x:Name="txtLogin" />
+                    </GroupBox>
+                    <GroupBox  BorderBrush="White"  Header="Пароль">
+                        <TextBox x:Name="txtPassword" />
+                    </GroupBox>
+
+                    <Button Background="#91ffe5" FontSize="16" BorderBrush="Transparent" Content="Зарегистрироваться" x:Name="btnAdd" Click="Button_Click" Margin="0 10 0 10"/>
+                    <Button Background="#91ffe5" FontSize="16" BorderBrush="Transparent" Content="Назад" x:Name="btnBack" Click="btnBack_Click"/>
+                </StackPanel>
+            </GroupBox>
+        </ScrollViewer>
+        <Image Stretch="UniformToFill" Source="..\Resourses\ImageAdd.png" Margin="0,0,394,0"/>
+
+    </Grid>
+</Page>
+
